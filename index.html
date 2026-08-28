@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>File Integrity Checker</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="badge">CYBERSECURITY TOOL</div>
+
+            <h1>File Integrity Checker</h1>
+
+            <p>
+                Verify the integrity of your files using SHA-256 hashing.
+            </p>
+        </div>
+
+
+        <div class="card">
+
+            <div class="upload-area">
+
+                <div class="upload-icon">
+                    🔐
+                </div>
+
+                <h2>Select a File</h2>
+
+                <p>
+                    Choose a file to calculate its SHA-256 hash.
+                </p>
+
+                <input type="file" id="fileInput">
+
+                <label for="fileInput" class="choose-button">
+                    Choose File
+                </label>
+
+                <p id="fileName" class="file-name">
+                    No file selected
+                </p>
+
+            </div>
+
+
+            <button id="checkButton" class="check-button">
+                Calculate SHA-256
+            </button>
+
+
+            <div id="loading" class="loading hidden">
+                Calculating hash...
+            </div>
+
+
+            <div id="result" class="result hidden">
+
+                <h2>Hash Result</h2>
+
+                <div class="result-item">
+
+                    <span>File Name</span>
+
+                    <strong id="resultFileName"></strong>
+
+                </div>
+
+
+                <div class="hash-box">
+
+                    <span>SHA-256 Hash</span>
+
+                    <p id="hashValue"></p>
+
+                </div>
+
+
+                <button id="copyButton" class="copy-button">
+                    Copy Hash
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="info">
+
+            <h3>How it works</h3>
+
+            <div class="steps">
+
+                <div>
+                    <span>01</span>
+                    <p>Select a file</p>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <p>Generate SHA-256</p>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <p>Use the hash as a digital fingerprint</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <footer>
+            File Integrity Checker • Educational Cybersecurity Project
+        </footer>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
